@@ -23,11 +23,11 @@ var accessToken = process.env.ACCESS_TOKEN;
 var bingKey = process.env.BING_KEY;
 var cleverUser = process.env.CLEVER_USER;
 var cleverKey = process.env.CLEVER_KEY;
-    cleverBot = new cleverbot(cleverUser,cleverKey);
-    randomNumber = randomNumber = Math.floor(Math.random()*999);
-    session = 'Squadbot1'+randomNumber;
-    console.log("INITIATING CLEVERBOT SESSION: " + session)
-    cleverBot.setNick(session);
+    // cleverBot = new cleverbot(cleverUser,cleverKey);
+    // randomNumber = randomNumber = Math.floor(Math.random()*999);
+    // session = 'Squadbot1'+randomNumber;
+    // console.log("INITIATING CLEVERBOT SESSION: " + session)
+    // cleverBot.setNick(session);
 var weatherKey = process.env.WEATHER_KEY;
 var mathKey = process.env.MATH_KEY;
     Wolfram = new Client(mathKey);
@@ -538,11 +538,11 @@ function encodeQuery(query) {
 }
 
 
-cleverBot.create(function (err, session) {
-  // session is your session name, it will either be as you set it previously, or cleverbot.io will generate one for you
-
-  // Woo, you initialized cleverbot.io.  Insert further code here
-});
+// cleverBot.create(function (err, session) {
+//   // session is your session name, it will either be as you set it previously, or cleverbot.io will generate one for you
+//
+//   // Woo, you initialized cleverbot.io.  Insert further code here
+// });
 
 // Changes XML to JSON
 function xmlToJson(xml) {
