@@ -1,4 +1,4 @@
-# GroupMe Bot For Squad <img src="http://i.imgur.com/vhPBS6U.jpg" width="56">
+# GroupMe Bot For Squad
 
  Thanks for checking out the documentation to see how to use this thing!
 
