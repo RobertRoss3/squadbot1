@@ -46,7 +46,7 @@ Tag SquadBot with '@SquadBot':
 You can use SquadBot to mass tag others:
 
   * __@(all|squad|everyone|everybody)__ - Will tag everyone in the group, they will receive a notification whether they are muted or not. Obviously, this gets annoying to please use this sparingly.
-  *__@gsu__ - Will tag everyone in the Statesboro area. Less annoying than @all to some but still, use it sparingly.
+  * __@gsu__ - Will tag everyone in the Statesboro area. Less annoying than @all to some but still, use it sparingly.
   * __@(food|mealplan|meal plan)__ - Will tag everyone with a meal plan.
   * __@engineers__ - Will tag everyone who is an engineer.
   * __@Forum__ - Will tag everyone that lives at the Forum.
