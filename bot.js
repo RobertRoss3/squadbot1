@@ -81,7 +81,7 @@ function respond() {
       botRegex_oneword = /^\b[a-zA-Z0-9_]+\b$/; botRegex_ass = /(\b(eat|eating|eats|ate) ass\b)(.*?)/i;
       botRegex_wtf = /\b(wtf|wth|what the (hell|fuck))\b/i; botRegex_thanks = /\b(thanks|(thank you))\b/i;
       botRegex_all = /@(all|squad\b|anyone|everyone|everybody)/i; botRegex_insult = /(\b(fuck|fuck you|suck|sucks)\b)(.*?)/i;
-      botRegex_bot = /@Squadbot.*?/i; botRegex_giphy = /^([\/]giphy)/i; botRegex_face = /^[\/]face$/i;
+      botRegex_bot = /^@SquadBot$/i; botRegex_giphy = /^([\/]giphy)/i; botRegex_face = /^[\/]face$/i;
       botRegex_bing = /^([\/]image)/i; weatherRegex = /\bweather\b/i;
       wifiRegex = /^(?=.*\b(wifi|wi-fi)\b)(?=.*\bpassword\b).*$/im; botRegex_bye = /\b(good night)|(bye)|(goodbye)|(goodnight)\b/i;
       mathRegex = /^\/\b(math|calc|wolf)\b/i; botRegex_morning = /\b(good morning)\b/i;
@@ -119,18 +119,22 @@ function respond() {
       //   ["Hi there, @" + userName + ".",[[10,(1+userName.length)],[userIDNum]]],
       //   ["Well hello @" + userName + "! I hope you're enjoying this fine " + sayDay + ".",[[11,(userName.length+1)],[userIDNum]]]
       // ];
-  if(request.text && botRegex_oneword.test(request.text)) {
-    this.res.writeHead(200);
-    if (botRegex_damn.test(request.text)) {
-      likeMessage(request.id);
-      postMessage("- Jamal Rogers");
-    }
-    if (botRegex_bot.test(request.text)) {
+	
+   if (request.text && botRegex_bot.test(request.text)) {
+	   this.res.writeHead(200);
       likeMessage(request.id);
       response = ["What?","What is it?", "?",
                   "Yes?", "I'm awake!", "How can I help?", "Huh?","You called?"];
       randomNumber = Math.floor(Math.random()*response.length);
       postMessage(response[randomNumber]);
+      this.res.end();
+    }
+	
+  if(request.text && botRegex_oneword.test(request.text)) {
+    this.res.writeHead(200);
+    if (botRegex_damn.test(request.text)) {
+      likeMessage(request.id);
+      postMessage("- Jamal Rogers");
     }
     this.res.end();
   }
