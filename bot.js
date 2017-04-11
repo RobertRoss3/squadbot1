@@ -14,7 +14,6 @@ var Guid = require('guid');
 
 console.log("INITIATING APPLICATION...");
 
-
 //     API KEYS FOR ALL APIS USED
 var botID = process.env.BOT_ID;
 var groupID = process.env.GROUP_ID;
@@ -77,18 +76,18 @@ function respond() {
                 "You can use \'@all\' to tag everyone. Please don\'t abuse this or you will be forbidden from using it. \n" +
                 "You can see my source code and the rest of the documentation here: https://github.com/RobertRoss3/squadbot1";
       // ALL REGULAR EXPRESSIONS or TRIGGERS FOR THE BOT
-      botRegex_damn = /\bdamn|damn!\b/i; botRegex_hi = /(\bhi|hello|hey|heyo|sup|wassup\b).*?/i;
-      botRegex_oneword = /^\b[a-zA-Z0-9_]+\b$/; botRegex_ass = /(\b(eat|eating|eats|ate) ass\b)(.*?)/i;
+      botRegex_damn = /\bdamn|damn!\b/i;                    botRegex_hi = /(\bhi|hello|hey|heyo|sup|wassup\b).*?/i;
+      botRegex_oneword = /^\b[a-zA-Z0-9_]+\b$/;             botRegex_ass = /(\b(eat|eating|eats|ate) ass\b)(.*?)/i;
       botRegex_wtf = /\b(wtf|wth|what the (hell|fuck))\b/i; botRegex_thanks = /\b(thanks|(thank you))\b/i;
       botRegex_all = /@(all|squad\b|anyone|everyone|everybody)/i; botRegex_insult = /(\b(fuck|fuck you|suck|sucks)\b)(.*?)/i;
-      botRegex_bot = /@Squadbot.*?/i; botRegex_giphy = /^([\/]giphy)/i; botRegex_face = /^[\/]face$/i;
-      botRegex_bing = /^([\/]image)/i; weatherRegex = /\bweather\b/i;
+      botRegex_bot = /@Squadbot.*?/i;                       botRegex_giphy = /^([\/]giphy)/i;
+      botRegex_face = /^[\/]face$/i;                        botRegex_bing = /^([\/]image)/i; weatherRegex = /\bweather\b/i;
       wifiRegex = /^(?=.*\b(wifi|wi-fi)\b)(?=.*\bpassword\b).*$/im; botRegex_bye = /\b(good night)|(bye)|(goodbye)|(goodnight)\b/i;
-      mathRegex = /^\/\b(math|calc|wolf)\b/i; botRegex_morning = /\b(good morning)\b/i;
-      tagRegex_mealplan = /@(food|meal plan|mealplan)/i; tagRegex_engineers = /@engineers/i;
-      tagRegex_forum = /@forum/i; tagRegex_oneeleven = /@(111|911)/i;
-      tagRegex_GSU = /@(GSU|southern)/i; botRegex_joke = /^(?=.*\b(issa|it's a)\b)(?=.*\joke\b).*$/i;
-      botRegex_kick = /#kicksquadbot/i;
+      mathRegex = /^\/\b(math|calc|wolf)\b/i;               botRegex_morning = /\b(good morning)\b/i;
+      tagRegex_mealplan = /@(food|meal plan|mealplan)/i;    tagRegex_engineers = /@engineers/i;
+      tagRegex_forum = /@forum/i;                           tagRegex_oneeleven = /@(111|911)/i;
+      tagRegex_GSU = /@(GSU|southern)/i;                    botRegex_joke = /^(?=.*\b(issa|it's a)\b)(?=.*\joke\b).*$/i;
+      botRegex_kick = /#kicksquadbot/i;                     tagoneword = /^.\b[a-zA-Z0-9_]+\b$/i;
       // ALL MEMBERS IN THE GROUP
       Connor	=	'30824774'; Elias	= '24488525'; White_Matt	=	'18341900';
       Caleb	=	  '31575032'; Dalvin	= '29824624'; David	= '18252184';
@@ -125,7 +124,7 @@ function respond() {
       likeMessage(request.id);
       postMessage("- Jamal Rogers");
     }
-    if (botRegex_bot.test(request.text)) {
+    if (request.text == "@SquadBot" || request.text == "@squadbot" || request.text == "@Squadbot") {
       likeMessage(request.id);
       response = ["What?","What is it?", "?",
                   "Yes?", "I'm awake!", "How can I help?", "Huh?","You called?"];
