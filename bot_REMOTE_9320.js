@@ -14,18 +14,18 @@ var Guid = require('guid');
 
 console.log("INITIATING APPLICATION...");
 
+
 //     API KEYS FOR ALL APIS USED
 var botID = process.env.BOT_ID;
 var groupID = process.env.GROUP_ID;
 var GiphyapiKey = process.env.GIPHY_API_KEY;
 var accessToken = process.env.ACCESS_TOKEN;
 var bingKey = process.env.BING_KEY;
-
 //var cleverUser = process.env.CLEVER_USER;
 //var cleverKey = process.env.CLEVER_KEY;
 //    cleverBot = new cleverbot(cleverUser,cleverKey);
-//    randomNumber = randomNumber = Math.floor(Math.random()*999);
-//    session = 'Squadbot1'+randomNumber;
+    randomNumber = randomNumber = Math.floor(Math.random()*999);
+    session = 'Squadbot1'+randomNumber;
 //    console.log("INITIATING CLEVERBOT SESSION: " + session)
 //    cleverBot.setNick(session);
 var weatherKey = process.env.WEATHER_KEY;
@@ -77,25 +77,25 @@ function respond() {
                 "You can use \'@all\' to tag everyone. Please don\'t abuse this or you will be forbidden from using it. \n" +
                 "You can see my source code and the rest of the documentation here: https://github.com/RobertRoss3/squadbot1";
       // ALL REGULAR EXPRESSIONS or TRIGGERS FOR THE BOT
-      botRegex_damn = /\bdamn|damn!\b/i;                    botRegex_hi = /(\bhi|hello|hey|heyo|sup|wassup\b).*?/i;
-      botRegex_oneword = /^\b[a-zA-Z0-9_]+\b$/;             botRegex_ass = /(\b(eat|eating|eats|ate) ass\b)(.*?)/i;
+      botRegex_damn = /\bdamn|damn!\b/i; botRegex_hi = /(\bhi|hello|hey|heyo|sup|wassup\b).*?/i;
+      botRegex_oneword = /^\b[a-zA-Z0-9_]+\b$/; botRegex_ass = /(\b(eat|eating|eats|ate) ass\b)(.*?)/i;
       botRegex_wtf = /\b(wtf|wth|what the (hell|fuck))\b/i; botRegex_thanks = /\b(thanks|(thank you))\b/i;
       botRegex_all = /@(all|squad\b|anyone|everyone|everybody)/i; botRegex_insult = /(\b(fuck|fuck you|suck|sucks)\b)(.*?)/i;
-      botRegex_bot = /@Squadbot.*?/i;                       botRegex_giphy = /^([\/]giphy)/i;
-      botRegex_face = /^[\/]face$/i;                        botRegex_bing = /^([\/]image)/i; weatherRegex = /\bweather\b/i;
+      botRegex_bot = /^@SquadBot$/i; botRegex_giphy = /^([\/]giphy)/i; botRegex_face = /^[\/]face$/i;
+      botRegex_bing = /^([\/]image)/i; weatherRegex = /\bweather\b/i;
       wifiRegex = /^(?=.*\b(wifi|wi-fi)\b)(?=.*\bpassword\b).*$/im; botRegex_bye = /\b(good night)|(bye)|(goodbye)|(goodnight)\b/i;
-      mathRegex = /^\/\b(math|calc|wolf)\b/i;               botRegex_morning = /\b(good morning)\b/i;
-      tagRegex_mealplan = /@(food|meal plan|mealplan)/i;    tagRegex_engineers = /@engineers/i;
-      tagRegex_forum = /@forum/i;                           tagRegex_oneeleven = /@(111|911)/i;
-      tagRegex_GSU = /@(GSU|southern)/i;                    botRegex_joke = /^(?=.*\b(issa|it's a)\b)(?=.*\joke\b).*$/i;
-      botRegex_kick = /#kicksquadbot/i;                     tagoneword = /^.\b[a-zA-Z0-9_]+\b$/i;
+      mathRegex = /^\/\b(math|calc|wolf)\b/i; botRegex_morning = /\b(good morning)\b/i;
+      tagRegex_mealplan = /@(food|meal plan|mealplan)/i; tagRegex_engineers = /@engineers/i;
+      tagRegex_forum = /@forum/i; tagRegex_oneeleven = /@(111|911)/i;
+      tagRegex_GSU = /@(GSU|southern)/i; botRegex_joke = /^(?=.*\b(issa|it's a)\b)(?=.*\joke\b).*$/i;
+      botRegex_kick = /#kicksquadbot/i;
       // ALL MEMBERS IN THE GROUP
       Connor	=	'30824774'; Elias	= '24488525'; White_Matt	=	'18341900';
       Caleb	=	  '31575032'; Dalvin	= '29824624'; David	= '18252184';
       Kalan	=	  '30151684'; Nathan	= '12558120'; Robert	= '28758543';
       Black_Matt	= '29879154'; Brittany	=	  '42281557'; Sara	= '29187291';
       Nick	=	  '29823868'; Jay	=	  '41361709'; Marco	=	  '38221747';
-      Chad	= '24474608'; Tori	= '18922923'; Cayte	=	'43573131'; Carley = '20643343';
+      Chad	= '24474608'; Tori	= '18922923'; Cayte	=	'43573131';
 
       // INFO ABOUT THE USER THAT TRIGGERED THE BOT
       userName = request.name; userIDNum = request.user_id;
@@ -119,14 +119,9 @@ function respond() {
       //   ["Hi there, @" + userName + ".",[[10,(1+userName.length)],[userIDNum]]],
       //   ["Well hello @" + userName + "! I hope you're enjoying this fine " + sayDay + ".",[[11,(userName.length+1)],[userIDNum]]]
       // ];
-  if(request.text && botRegex_oneword.test(request.text)) {
-    this.res.writeHead(200);
-    if (botRegex_damn.test(request.text)) {
-      likeMessage(request.id);
-      postMessage("- Jamal Rogers");
-    }
-    if (request.text == "@SquadBot" || request.text == "@squadbot" || request.text == "@Squadbot") {
-
+	
+   if (request.text && botRegex_bot.test(request.text)) {
+	   this.res.writeHead(200);
       likeMessage(request.id);
       response = ["What?","What is it?", "?",
                   "Yes?", "I'm awake!", "How can I help?", "Huh?","You called?"];
@@ -134,7 +129,7 @@ function respond() {
       postMessage(response[randomNumber]);
       this.res.end();
     }
-
+	
   if(request.text && botRegex_oneword.test(request.text)) {
     this.res.writeHead(200);
     if (botRegex_damn.test(request.text)) {
@@ -175,7 +170,7 @@ function respond() {
     Engineers = [Connor, Dalvin, Nathan, Robert, Nick];
     Forum = [White_Matt, Dalvin, David, Kalan, Robert, Black_Matt, Marco];
     OneEleven = [Connor, Elias, Nathan, Caleb];
-    AtGSU = [Kalan, Dalvin, Marco, Black_Matt, Caleb, Robert];
+    AtGSU = [Connor, Elias, White_Matt, Caleb, Dalvin, David, Kalan, Nathan, Black_Matt, Sara, Nick, Marco, Chad, Cayte];
     ExcludeFromAll = [];
     if (request.user_id == '') {postMessage("???");}
     // If Marco posts @all
@@ -546,13 +541,11 @@ function encodeQuery(query) {
   return query.replace(/\s/g, '+');;
 }
 
+//Bot.create(function (err, session) {
+  // session is your session name, it will either be as you set it previously, or cleverbot.io will generate one for you
 
-// cleverBot.create(function (err, session) {
-//   // session is your session name, it will either be as you set it previously, or cleverbot.io will generate one for you
-//
-//   // Woo, you initialized cleverbot.io.  Insert further code here
-// });
-
+  // Woo, you initialized cleverbot.io.  Insert further code here
+//});
 
 // Changes XML to JSON
 function xmlToJson(xml) {

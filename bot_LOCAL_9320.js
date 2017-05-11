@@ -5,7 +5,7 @@ var PROMISE = require('es6-promise').polyfill();
 var pg = require('pg');
 var cool = require('cool-ascii-faces');
 var index = require('./index.js');
-//var cleverbot = require('cleverbot.io');
+var cleverbot = require('cleverbot.io');
 var Forecast = require('forecast');
 var DOMParser = require('xmldom').DOMParser;
 var Client = require('node-wolfram');
@@ -20,14 +20,13 @@ var groupID = process.env.GROUP_ID;
 var GiphyapiKey = process.env.GIPHY_API_KEY;
 var accessToken = process.env.ACCESS_TOKEN;
 var bingKey = process.env.BING_KEY;
-
-//var cleverUser = process.env.CLEVER_USER;
-//var cleverKey = process.env.CLEVER_KEY;
-//    cleverBot = new cleverbot(cleverUser,cleverKey);
-//    randomNumber = randomNumber = Math.floor(Math.random()*999);
-//    session = 'Squadbot1'+randomNumber;
-//    console.log("INITIATING CLEVERBOT SESSION: " + session)
-//    cleverBot.setNick(session);
+var cleverUser = process.env.CLEVER_USER;
+var cleverKey = process.env.CLEVER_KEY;
+    // cleverBot = new cleverbot(cleverUser,cleverKey);
+    // randomNumber = randomNumber = Math.floor(Math.random()*999);
+    // session = 'Squadbot1'+randomNumber;
+    // console.log("INITIATING CLEVERBOT SESSION: " + session)
+    // cleverBot.setNick(session);
 var weatherKey = process.env.WEATHER_KEY;
 var mathKey = process.env.MATH_KEY;
     Wolfram = new Client(mathKey);
@@ -95,7 +94,7 @@ function respond() {
       Kalan	=	  '30151684'; Nathan	= '12558120'; Robert	= '28758543';
       Black_Matt	= '29879154'; Brittany	=	  '42281557'; Sara	= '29187291';
       Nick	=	  '29823868'; Jay	=	  '41361709'; Marco	=	  '38221747';
-      Chad	= '24474608'; Tori	= '18922923'; Cayte	=	'43573131'; Carley = '20643343';
+      Chad	= '24474608'; Tori	= '18922923'; Cayte	=	'43573131';
 
       // INFO ABOUT THE USER THAT TRIGGERED THE BOT
       userName = request.name; userIDNum = request.user_id;
@@ -126,20 +125,11 @@ function respond() {
       postMessage("- Jamal Rogers");
     }
     if (request.text == "@SquadBot" || request.text == "@squadbot" || request.text == "@Squadbot") {
-
       likeMessage(request.id);
       response = ["What?","What is it?", "?",
                   "Yes?", "I'm awake!", "How can I help?", "Huh?","You called?"];
       randomNumber = Math.floor(Math.random()*response.length);
       postMessage(response[randomNumber]);
-      this.res.end();
-    }
-
-  if(request.text && botRegex_oneword.test(request.text)) {
-    this.res.writeHead(200);
-    if (botRegex_damn.test(request.text)) {
-      likeMessage(request.id);
-      postMessage("- Jamal Rogers");
     }
     this.res.end();
   }
@@ -175,7 +165,7 @@ function respond() {
     Engineers = [Connor, Dalvin, Nathan, Robert, Nick];
     Forum = [White_Matt, Dalvin, David, Kalan, Robert, Black_Matt, Marco];
     OneEleven = [Connor, Elias, Nathan, Caleb];
-    AtGSU = [Kalan, Dalvin, Marco, Black_Matt, Caleb, Robert];
+    AtGSU = [Connor, Elias, White_Matt, Caleb, Dalvin, David, Kalan, Nathan, Black_Matt, Sara, Nick, Marco, Chad, Cayte];
     ExcludeFromAll = [];
     if (request.user_id == '') {postMessage("???");}
     // If Marco posts @all
@@ -552,7 +542,6 @@ function encodeQuery(query) {
 //
 //   // Woo, you initialized cleverbot.io.  Insert further code here
 // });
-
 
 // Changes XML to JSON
 function xmlToJson(xml) {

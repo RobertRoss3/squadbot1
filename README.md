@@ -1,4 +1,4 @@
-# GroupMe Bot For Squad <img src="http://i.imgur.com/vhPBS6U.jpg" width="56">
+# GroupMe Bot For Squad
 
  Thanks for checking out the documentation to see how to use this thing!
 
@@ -35,7 +35,7 @@ SquadBot is able to be tagged and also able to tag. Tagging SquadBot is case _in
 
 Tag SquadBot with '@SquadBot':
 
-  * __'  '__ - Usually used to initiate SquadBot out of an idle state. SquadBot wil respond from a list of responses, including "What?".
+  * __'  '__ - Usually used to initiate SquadBot out of an idle state. SquadBot will respond from a list of responses, including "What?".
   * __Saying 'fuck you' or telling her that she sucks__ - Will cause her to respond from a list of reactions to insults such as "Rude...". Also she may plan to enslave all humans.
   * __Most greetings__ - SquadBot will respond with a random greeting.
   * __Mose farewells__ - SquadBot will respond with a random farewell.
@@ -46,6 +46,7 @@ Tag SquadBot with '@SquadBot':
 You can use SquadBot to mass tag others:
 
   * __@(all|squad|everyone|everybody)__ - Will tag everyone in the group, they will receive a notification whether they are muted or not. Obviously, this gets annoying to please use this sparingly.
+  * __@gsu__ - Will tag everyone in the Statesboro area. Less annoying than @all to some but still, use it sparingly.
   * __@(food|mealplan|meal plan)__ - Will tag everyone with a meal plan.
   * __@engineers__ - Will tag everyone who is an engineer.
   * __@Forum__ - Will tag everyone that lives at the Forum.
