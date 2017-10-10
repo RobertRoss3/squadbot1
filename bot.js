@@ -14,7 +14,7 @@ var Guid = require('guid');
 
 console.log("INITIATING APPLICATION...");
 
-//     API KEYS FOR ALL APIS USED
+//     API KEYS FOR ALL APIS USED #
 var botID = process.env.BOT_ID;
 var groupID = process.env.GROUP_ID;
 var GiphyapiKey = process.env.GIPHY_API_KEY;
