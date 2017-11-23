@@ -547,11 +547,7 @@ function encodeQuery(query) {
 }
 
 
-// cleverBot.create(function (err, session) {
-//   // session is your session name, it will either be as you set it previously, or cleverbot.io will generate one for you
-//
-//   // Woo, you initialized cleverbot.io.  Insert further code here
-// });
+
 
 
 // Changes XML to JSON
